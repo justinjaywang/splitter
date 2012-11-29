@@ -9,34 +9,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/*.bar-title {
-  top: 0;
-  display: -webkit-box;
-  display: box;
-  background-color: #1eb0e9;
-  background-image: -webkit-linear-gradient(top, #1eb0e9 0, #109adc 100%);
-  background-image: linear-gradient(to bottom, #1eb0e9 0, #109adc 100%);
-  border-bottom: 1px solid #0e5895;
-  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, .8);
-  -webkit-box-orient: horizontal;
-          box-orient: horizontal;
-}
-.bar-title [class*="button"] {
-  position: relative;
-  z-index: 10;
-  font-size: 12px;
-  line-height: 23px;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
-  background-color: #1eb0e9;
-  background-image: -webkit-linear-gradient(top, #1eb0e9 0, #0984c6 100%);
-  background-image: linear-gradient(to bottom, #1eb0e9 0, #0984c6 100%);
-  border: 1px solid #0e5895;
-  box-shadow: 0 1px rgba(255, 255, 255, .25);
-  -webkit-box-flex: 0;
-          box-flex: 0;
-}*/
-
 /* list styles */
 .list li {
   padding: 20px 60px 20px 14px; /* Given extra right padding to accomodate counts, chevrons or buttons */
@@ -72,7 +44,7 @@ a li#payments {
 }
 
 .list .payment.person {
-  color: #999;
+  color: #959DA5;
   font-size: 14px;
   line-height: 14px;
   font-weight: 500;
@@ -81,11 +53,12 @@ a li#payments {
 li#group {
   padding-top: 18px;
   padding-bottom: 18px;
+  height: 56px;
 }
 
 .group.number {
   font-weight: 500;
-  color: #999;
+  color: #959DA5;
   padding-left: 6px;
 }
 
@@ -155,7 +128,7 @@ li#group {
   font-size: 14px;
   line-height: 18px;
   font-weight: bold;
-  color: #999;
+  color: #959DA5;
   cursor: pointer;
 }
 .list .group.edit:before {
@@ -186,15 +159,15 @@ li#group {
 /* summary */
 .list li.amounts {
   padding: 0;
-  height: 75px;
+  height: 78px;
 }
 .summary.person img {
   position: absolute;
   top: 50%;
   left: 0;
-  height: 76px;
-  width: 76px;
-  margin-top: -1px;
+  height: 79px;
+  width: 79px;
+  margin-top: -2px;
 }
 .amounts .paid, 
 .amounts .should-pay,
@@ -205,7 +178,7 @@ li#group {
 	 margin-top: -25px;
 	 font-size: 14px;
 	 font-weight: 500;
-	 color: #999;
+	 color: #959DA5;
 }
 .amounts .paid:after {
   content: 'Paid';
@@ -221,13 +194,13 @@ li#group {
   left: 23%;
 }
 #summary .should-pay {
-  left: 48%;
+  left: 47%;
 }
 #summary .net {
-  left: 73%;
+  left: 71%;
 }
 .amount {
-	font-size: 22px;
+	font-size: 20px;
 	line-height: 28px;
 	color: #444;
 	font-weight: bold;
@@ -246,12 +219,6 @@ li#group {
 .minus:before {
   content: '\2013$'; /* ndash */
 }
-
-/*.list .button.email, .list .button.text, .list .button-positive.settle {
-  position: static;
-  top: 50%;
-  right: 14px;
-}*/
 
 .button.remind, .button.settle {
   font-size: 14px;

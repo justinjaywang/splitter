@@ -1,0 +1,300 @@
+/*
+  Layer of visual design, many of which override ratchet.css
+*/
+
+/* Change blue title bar to black */
+.bar-title {
+  top: 0;
+  display: -webkit-box;
+  display: box;
+  background-color: #333;
+  background-image: -webkit-linear-gradient(top, #333 0, #2a2a2a 100%);
+  background-image: linear-gradient(to bottom, #333 0, #2a2a2a 100%);
+  border-bottom: 1px solid #111;
+  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, .8);
+  -webkit-box-orient: horizontal;
+          box-orient: horizontal;
+}
+.bar-title [class*="button"] {
+  position: relative;
+  z-index: 10;
+  font-size: 12px;
+  line-height: 23px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+  background-color: #333;
+  background-image: -webkit-linear-gradient(top, #333 0, #222 100%);
+  background-image: linear-gradient(to bottom, #333 0, #222 100%);
+  border: 1px solid #111;
+  box-shadow: 0 1px rgba(255, 255, 255, .25);
+  -webkit-box-flex: 0;
+          box-flex: 0;
+}
+/* Override standard button active states */
+.bar-title .button:active {
+  color: #fff;
+  background-color: #1c1c1c;
+}
+
+/* Pointed part of directional button */
+.bar-title .button-prev:before,
+.bar-title .button-next:before {
+  position: absolute;
+  top: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 30px 100px 2px 40px / 2px 40px 30px 100px;
+  content: '';
+  box-shadow: inset 1px 0 #111, inset 0 1px #111;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(#000), color-stop(.33, #000), color-stop(.5, transparent), to(transparent));
+                  mask-image: gradient(linear, left top, right bottom, from(#000), color-stop(.33, #000), color-stop(.5, transparent), to(transparent));
+}
+.bar-title .button-prev:before {
+  left: -5px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#222), to(#333));
+  background-image: gradient(linear, left bottom, right top, from(#222), to(#333));
+  border-left: 1.5px solid rgba(255, 255, 255, .25);
+  -webkit-transform: rotate(-45deg) skew(-10deg, -10deg);
+          transform: rotate(-45deg) skew(-10deg, -10deg);
+}
+.bar-title .button-next:before {
+  right: -5px;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#333), to(#222));
+  background-image: gradient(linear, left bottom, right top, from(#333), to(#222));
+  border-top: 1.5px solid rgba(255, 255, 255, .25);
+  -webkit-transform: rotate(135deg) skew(-10deg, -10deg);
+          transform: rotate(135deg) skew(-10deg, -10deg);
+}
+
+/* Active states for the directional buttons */
+.bar-title .button-prev:active,
+.bar-title .button-next:active,
+.bar-title .button-prev:active:before,
+.bar-title .button-next:active:before {
+  color: #fff;
+  background-color: #1c1c1c;
+  background-image: none;
+}
+
+/* Plus/minus colors */
+.plus {
+  color: #3AB569;
+}
+.minus {
+  color: #FF5B54;
+}
+
+/* List dividers */
+.list .list-divider {
+  position: relative;
+  top: -1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  text-shadow: 0 0px 0 rgba(255, 255, 255, .5);
+  background-color: #C2C7CC;
+  background-image: -webkit-linear-gradient(top, #C2C7CC 0, #C2C7CC 100%);
+  background-image: linear-gradient(to bottom, #C2C7CC 0, #C2C7CC 100%);
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4);
+  color: #fff;
+}
+/* Generic bar for wrapping buttons, segmented controllers, etc. */
+.bar-standard {
+  background-color: #C2C7CC;
+  background-image: -webkit-linear-gradient(top, #C2C7CC 0, #C2C7CC 100%);
+  background-image: linear-gradient(to bottom, #C2C7CC 0, #C2C7CC 100%);
+/*  border-bottom: 1px solid #aaa;
+  box-shadow: inset 0 1px 1px -1px #fff;*/
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: inset 0 0px 0px rgba(255, 255, 255, .4);
+}
+
+.list .list-divider,
+.list li#payments.list-divider,
+.list li#summary.list-divider {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Background for lists */
+.list li,
+select,
+textarea,
+input[type="text"],
+input[type=search],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="color"],
+.input-group {
+  background: #F0F1F3;
+}
+
+/* Get rid of inset box shadow */
+select,
+textarea,
+input[type="text"],
+input[type=search],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="color"],
+.input-group {
+  box-shadow: 0 0px 0px rgba(255, 255, 255, .2), inset 0 0px 0px rgba(0, 0, 0, .1);
+}
+/* Font size and line height of search */
+input[type=search] {
+  height: 34px;
+  border-radius: 30px;
+  font-size: 16px;
+  line-height: 24px;
+}
+/* Move secondary header up 1 pixel */
+.bar-header-secondary {
+  top: 44px;
+}
+
+/* Buttons */
+[class*="button"] {
+  position: relative;
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 0;
+  font-weight: bold;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0px 0 rgba(255, 255, 255, 0.5);
+  vertical-align: top;
+  cursor: pointer;
+  background-color: #C2C7CC;
+  background-image: -webkit-linear-gradient(top, #C2C7CC 0, #C2C7CC 100%);
+  background-image: linear-gradient(to bottom, #C2C7CC 0, #C2C7CC 100%);
+  border: 0px solid rgba(0, 0, 0, .3);
+  border-radius: 3px;
+  box-shadow: inset 0 0px 0px rgba(255, 255, 255, .4), 0 0px 0px rgba(0, 0, 0, .05);
+}
+[class*="button"]:active {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  color: #fff;
+  background-color: #959DA5;
+  background-image: none;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, .2);
+}
+.button-block {
+  display: block;
+  padding: 11px 0 13px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Active state for block level buttons */
+.button-block:active {
+  padding: 12px 0;
+}
+
+/* Negative button  */
+.button-negative {
+  background-color: #FF5B54;
+  background-image: -webkit-linear-gradient(top, #FF5B54 0,#FF5B54 100%);
+  background-image: linear-gradient(to bottom, #FF5B54 0, #FF5B54 100%);
+  border: 0px solid #b51a1a;
+}
+
+
+/* Move right-aligned list contents over 1 pixel */
+.list .chevron,
+.list [class*="button"],
+.list [class*="count"],
+.list .toggle {
+  right: 15px;
+}
+
+/* Base styles for both 1/2's of the chevron */
+.chevron:before,
+.chevron:after {
+  background-color: #959DA5;
+}
+
+/* Segmented controller */
+.segmented-controller {
+  display: -webkit-box;
+  display: box;
+  margin-bottom: 10px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0px rgba(255, 255, 255, .5);
+  list-style: none;
+  background-color: #C2C7CC;
+  background-image: -webkit-linear-gradient(top, #C2C7CC 0, #C2C7CC 100%);
+  background-image: linear-gradient(to bottom, #C2C7CC 0, #C2C7CC 100%);
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: inset 0 0px rgba(255, 255, 255, 0.5), 0 0px rgba(255, 255, 255, .8);
+  -webkit-box-orient: horizontal;
+          box-orient: horizontal;
+}
+
+/* Section within controller */
+.segmented-controller li {
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  border-left: 1px solid #aaa;
+  box-shadow: inset 0px 0 rgba(255, 255, 255, .5);
+  -webkit-box-flex: 1;
+          box-flex: 1;
+}
+
+/* Link that fills each section */
+.segmented-controller li > a {
+  display: block;
+  padding: 8px 16px;
+  overflow: hidden;
+  line-height: 15px;
+  color: #999;
+  text-overflow: ellipsis;
+}
+.segmented-controller li.active > a {
+  color: #fff;
+}
+
+/* Remove border-left and shadow from first section */
+.segmented-controller li:first-child {
+  border-left-width: 0;
+  box-shadow: none;
+}
+
+/* Active segment of controller */
+.segmented-controller li.active {
+/*  background-color: #C2C7CC;*/
+  background-color: #959DA5;
+/*  background-color: #333;*/
+/*  background-color: #C2C7CC;*/
+/*  box-shadow: inset 0 1px 5px rgba(0, 0, 0, .3);*/
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, .3);
+}
