@@ -223,6 +223,9 @@ input[type=search] {
   background-image: linear-gradient(to bottom, #FF5B54 0, #FF5B54 100%);
   border: 0px solid #b51a1a;
 }
+.button-negative:active {
+  background-color: #CC4943;
+}
 
 
 /* Move right-aligned list contents over 1 pixel */
