@@ -250,7 +250,7 @@ input[type=search] {
   text-shadow: 0 0px rgba(255, 255, 255, .5);
   list-style: none;
   background-color: #C2C7CC;
-  background-image: -webkit-linear-gradient(top, #C2C7CC 0, #C2C7CC 100%);
+  background-image: -webkit-linear-gradient(top, #C7CCD1 0, #C7CCD1 100%);
   background-image: linear-gradient(to bottom, #C2C7CC 0, #C2C7CC 100%);
   border: 1px solid #aaa;
   border-radius: 3px;
