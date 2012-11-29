@@ -116,8 +116,8 @@
 .list .list-divider,
 .list li#payments.list-divider,
 .list li#summary.list-divider {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* Background for lists */
@@ -240,19 +240,24 @@ input[type=search] {
 }
 
 /* Segmented controller */
+[class*="bar-"] .segmented-controller {
+/*  margin-bottom: 0;*/
+  margin: 2px 2px 0;
+}
+
 .segmented-controller {
   display: -webkit-box;
   display: box;
   margin-bottom: 10px;
   overflow: hidden;
-  font-size: 14px;
+/*  font-size: 14px;*/
   font-weight: bold;
   text-shadow: 0 0px rgba(255, 255, 255, .5);
   list-style: none;
   background-color: #CCD1D6;
   background-image: -webkit-linear-gradient(top, #CCD1D6 0, #CCD1D6 100%);
   background-image: linear-gradient(to bottom, #CCD1D6 0, #CCD1D6 100%);
-  border: 1px solid #aaa;
+  border: 0px solid #aaa;
   border-radius: 3px;
   box-shadow: inset 0 0px rgba(255, 255, 255, 0.5), 0 0px rgba(255, 255, 255, .8);
   -webkit-box-orient: horizontal;
@@ -264,10 +269,11 @@ input[type=search] {
   overflow: hidden;
   text-align: center;
   white-space: nowrap;
-  border-left: 1px solid #aaa;
+  border-left: 0px solid #aaa;
   box-shadow: inset 0px 0 rgba(255, 255, 255, .5);
   -webkit-box-flex: 1;
           box-flex: 1;
+  height: 30px;
 }
 
 /* Link that fills each section */
@@ -275,7 +281,7 @@ input[type=search] {
   display: block;
   padding: 8px 16px;
   overflow: hidden;
-  line-height: 15px;
+  line-height: 14px;
   color: #aaa;
   text-overflow: ellipsis;
 }
@@ -295,6 +301,6 @@ input[type=search] {
   background-color: #959DA5;
 /*  background-color: #333;*/
 /*  background-color: #C2C7CC;*/
-/*  box-shadow: inset 0 1px 5px rgba(0, 0, 0, .3);*/
-  box-shadow: inset 0 0px 0px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, .2);
+/*  box-shadow: inset 0 0px 0px rgba(0, 0, 0, .3);*/
 }

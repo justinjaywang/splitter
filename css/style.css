@@ -153,6 +153,7 @@ li#group {
 
 .segmented-controller li > a {
   color: #444;
+  font-size: 14px;
 }
 
 /* summary */
