@@ -130,6 +130,7 @@ groups.forEach(function(groupObj){
     app.get('/'+name_linkified+'/user/'+person_linkified, function(req, res){
       res.render('person-summary', {
         pageTitle: personObj.person,
+        name: groupObj.name,
         name_linkified: name_linkified,
         person: personObj.person,
         person_linkified: person_linkified,
