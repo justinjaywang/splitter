@@ -13,6 +13,7 @@ body {
 .list li {
   padding: 20px 60px 20px 14px; /* Given extra right padding to accomodate counts, chevrons or buttons */
   font-size: 16px;
+  line-height: 18px;
   font-weight: bold;
 }
 
@@ -72,7 +73,7 @@ li#group {
 }
 
 .add.li {
-  padding: 9px 4px 8px;
+  padding: 9px 4px;
 }
 
 .add.input {
