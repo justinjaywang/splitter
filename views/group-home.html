@@ -1,0 +1,103 @@
+<% include header.html %>
+
+<header class="bar-title">
+  <a class="button-prev" href="/" data-transition="slide-out">
+      Groups
+    </a>
+  <h1 class="title"><%= pageTitle %></h1>
+  <a class="button" href="/<%= name_linkified %>/add" data-transition="slide-in">
+      Add
+    </a>
+</header>
+
+<nav class="bar-standard bar-header-secondary">
+  <ul class="segmented-controller">
+    <li class="active">
+      <a href="#summary">Summary</a>
+    </li>
+    <li>
+      <a id="payment-button" href="#payments">Payments</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="content">
+  <ul class="list">
+    <!-- summary -->
+    <li id="summary" class="segmented-controller-item active list-divider">
+      Adam
+    </li>
+    <li id="summary" class="segmented-controller-item active amounts">
+		  <span class="summary person"><img src="http://placehold.it/76x76"></span>
+  		<span class="summary paid"><span class="summary amount">80.00</span><br></span>
+  		<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
+  		<span class="summary net"><span class="summary amount net-amount plus">30.00</span><br></span>
+    </li>
+    <li id="summary" class="segmented-controller-item active list-divider">
+      Becky
+    </li>
+    <li id="summary" class="segmented-controller-item active amounts">
+    	<span class="summary person"><img src="http://placehold.it/76x76"></span>
+  		<span class="summary paid"><span class="summary  amount">80.00</span><br></span>
+  		<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
+  		<span class="summary net"><span class="summary amount net-amount plus">30.00</span><br></span>
+    </li>
+    <li id="summary" class="segmented-controller-item active list-divider">
+      Cindy
+    </li>
+    <li id="summary" class="segmented-controller-item active amounts need-to-be-settled">
+			<span class="summary person"><img src="http://placehold.it/76x76"></span>
+			<span class="summary paid"><span class="summary  amount">20.00</span><br></span>
+			<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
+			<span class="summary net"><span class="summary amount net-amount minus">30.00</span><br></span>
+			<span class="chevron"></span>
+	  </li>
+	  <div class="slider" >
+  		<ul>
+  			<li class="detail">
+  					<a href="#">
+  					<span class="detail-arrow"><img src="http://placehold.it/200x60"></span>
+  					<span class="detail-amount">$50.00</span></span>
+  					<span class="detail-person"><img src="http://placehold.it/60x60"></span>
+  					<span class="chevron"></span>
+  			</li>
+  			<li class="detail"> 
+  				<a href="#" class="button email">Email</a>
+  				<a href="#" class="button text">Text</a>
+  				<a href="#" class="button-positive settle">Settled</a>
+  			</li>
+  		</ul>
+	  </div>
+    <!-- payments -->
+    <% payments.forEach(function(paymentObj){ %>
+    <li id="payments" class="segmented-controller-item list-divider"><%= formatTime(paymentObj.date) %></li>
+    <% paymentObj.list.forEach(function(payment){ %>
+    <a href="/<%= name_linkified %>/payment/<%= payment.id %>" data-transition="slide-in">
+    <li id="payments" class="segmented-controller-item">
+      <div class="payment item"><%= payment.description %></div>
+      <div class="payment person"><%= payment.payer %></div>
+      <span class="payment price"><%= payment.amount %></span>
+      <span class="chevron"></span>
+    </li>
+    </a>
+    <% }) %>
+    <% }) %>
+  </ul>
+</div>
+
+<script type="text/javascript">
+	$(document).load(function(){
+		$('.slider').hide();
+	});
+	$('#summary').live("click",function(){
+		$('.slider').hide();
+	});
+	$('.need-to-be-settled').live("click",function(){
+		$('.slider').show();
+	});
+	$('#payment-button').live("click",function(){
+		$('.slider').hide();
+	});
+</script>
+
+<% include footer.html %>

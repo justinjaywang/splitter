@@ -1,0 +1,36 @@
+<% include header.html %>
+
+<header class="bar-title">
+  <a class="button" href="/" data-transition="slide-out">
+      Cancel
+    </a>
+  <h1 class="title"><%= pageTitle %></h1>
+  <a class="button" href="/" data-transition="fade">
+      Save
+    </a>
+</header>
+
+<div class="content">
+  <ul class="list">
+    <li class="list-divider">Group name</li>
+    <li class="add li">
+      <form>
+        <input type="text" class="add input" placeholder="Enter name of group" value="<%= group.name %>">
+      </form>
+    </li>
+    <li class="list-divider">Group members</li>
+    <% group.members.forEach(function(member){ %>
+      <li id="member">
+        <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
+        <span class="group member"><%= member %></span>
+        <!-- <span class="chevron"></span> -->
+      </li>
+    <% }) %>
+  </ul>
+  <a class="button-block">Add member</a>
+  <% if (pageTitle=='Edit Group') { %>
+  <a class="button-negative button-block">Delete group</a>
+  <% } %>
+</div>
+
+<% include footer.html %>

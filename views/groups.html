@@ -1,0 +1,36 @@
+<% include header.html %>
+
+<header class="bar-title">
+  <h1 class="title">Groups</h1>
+  <a class="button" href="/add-group" data-transition="slide-in">
+    Add
+  </a>
+</header>
+
+<nav class="bar-standard bar-header-secondary">
+  <form>
+    <input type="search" placeholder="Search groups">
+  </form>
+</nav>
+
+<div class="content">
+  <ul class="list">
+    <% groups.forEach(function(groupObj){ %>
+    <li id="group">
+      <% var name_linkified = groupObj.name.replace(/\s/g, '-').toLowerCase(); %>
+      <a href="/<%= name_linkified %>" data-transition="slide-in">
+        <span class="group name"><%= groupObj.name %></span><span class="group number"><%= groupObj.members.length %></span>
+        <div class="group members">
+          <% groupObj.members.forEach(function(member){ %>
+            <img src="/images/<%= member.toLowerCase() %>.png">
+          <% }) %>
+        </div>
+        <a href="/<%= name_linkified %>/edit" class="group edit" data-transition="slide-in"></a>
+        <span class="chevron"></span>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+ 
+<% include footer.html %>
