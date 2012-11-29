@@ -27,51 +27,74 @@ function formatTime(timeString) {
 /* data */
 // groups
 var groups = [
-  { name: 'Camping trip', members: ['Adam', 'Becky', 'Cindy', 'David'], payments: [
+  { name: 'Camping trip', members: ['Adam', 'Becky', 'Cindy', 'David'],
+    summary: [ 
+      { person: 'Adam', paid: '18.30', share: '85.37', balance: '-67.07', owes: [{ person: 'Cindy', amount: '67.07'}], is_owed: [] },
+      { person: 'Becky', paid: '6.05', share: '85.37', balance: '-79.32', owes: [{ person: 'Cindy', amount: '79.32'}], is_owed: [] },
+      { person: 'Cindy', paid: '286.60', share: '85.37', balance: '201.23', owes: [], is_owed: [{ person: 'Adam', amount: '67.07' }, { person: 'Becky', amount: '79.32' }, { person: 'David', amount: '54.87' }] },
+      { person: 'David', paid: '30.50', share: '85.37', balance: '-54.87', owes: [{ person: 'Cindy', amount: '54.87'}], is_owed: [] }
+    ],
+    payments: [
     { date: '2012-12-02', list: [
       { amount: '46.30', description: 'Gas', payer: 'Cindy', split: 'Everyone', id: 7 }
-    ]},
+      ]},
     { date: '2012-12-01', list: [
       { amount: '5.50', description: 'Marshmallows', payer: 'Adam', split: 'Everyone', id: 6 },
       { amount: '12.80', description: 'Sausages', payer: 'Adam', split: 'Everyone', id: 5 },
       { amount: '6.05', description: 'S\'mores', payer: 'Becky', split: 'Everyone', id: 4 }
-    ]},
+      ]},
     { date: '2012-11-29', list: [
       { amount: '30.50', description: 'Firewood', payer: 'David', split: 'Everyone', id: 3 },
       { amount: '205.00', description: 'Campsite', payer: 'Cindy', split: 'Everyone', id: 2 },
       { amount: '35.30', description: 'Gas', payer: 'Cindy', split: 'Everyone', id: 1 }
-    ]}
-  ] },
-  { name: 'Roommates', members: ['Eddie', 'Fred', 'George'], payments: [
+      ]}
+    ] 
+  },
+  { name: 'Roommates', members: ['Eddie', 'Fred', 'George'],
+    summary: [ 
+      { person: 'Eddie', paid: '80.00', share: '50.00', balance: '30.00', owes: [], is_owed: [{ person: 'Fred', amount: '30.00' }] },
+      { person: 'Fred', paid: '10.00', share: '50.00', balance: '-40.00', owes: [{ person: 'Eddie', amount: '30.00'}, { person: 'George', amount: '10.00' }], is_owed: [] },
+      { person: 'George', paid: '60.00', share: '50.00', balance: '10.00', owes: [], is_owed: [{ person: 'Fred', amount: '10.00' }] }
+    ],
+    payments: [
     { date: '2012-12-13', list: [
       { amount: '30.00', description: 'Groceries', payer: 'Eddie', split: 'Everyone', id: 5 }
-    ]},
+      ]},
     { date: '2012-12-10', list: [
       { amount: '10.00', description: 'Dish soap and sponges', payer: 'Fred', split: 'Everyone', id: 4 }
-    ]},
+      ]},
     { date: '2012-12-08', list: [
       { amount: '50.00', description: 'Internet bill', payer: 'Eddie', split: 'Everyone', id: 3 },
       { amount: '35.00', description: 'Groceries', payer: 'George', split: 'Everyone', id: 2 }
-    ]},
+      ]},
     { date: '2012-12-01', list: [
       { amount: '25.00', description: 'Water bill', payer: 'George', split: 'Everyone', id: 1 }
-    ]}
-  ] },
-  { name: 'Holiday party', members: ['Henry', 'Irene', 'Jack', 'Kelly', 'Laura'], payments: [
+      ]}
+    ]
+  },
+  { name: 'Holiday party', members: ['Henry', 'Irene', 'Jack', 'Kelly', 'Laura'],
+    summary: [ 
+      { person: 'Henry', paid: '7.00', share: '10.52', balance: '-3.52', owes: [{ person: 'Laura', amount: '3.52'}], is_owed: [] },
+      { person: 'Irene', paid: '10.00', share: '10.52', balance: '-0.52', owes: [{ person: 'Laura', amount: '0.52'}], is_owed: [] },
+      { person: 'Jack', paid: '0.00', share: '10.52', balance: '-10.52', owes: [{ person: 'Kelly', amount: '2.58'}, { person: 'Laura', amount: '7.94'}], is_owed: [] },
+      { person: 'Kelly', paid: '13.10', share: '10.52', balance: '2.58', owes: [], is_owed: [{ person: 'Jack', amount: '2.58'}] },
+      { person: 'Laura', paid: '22.50', share: '10.52', balance: '11.98', owes: [], is_owed: [{ person: 'Henry', amount: '3.52'}, { person: 'Jack', amount: '0.52'}, { person: 'Irene', amount: '7.94'}] }
+    ],
+    payments: [
     { date: '2012-12-12', list: [
       { amount: '10.00', description: 'Decorations', payer: 'Irene', split: 'Everyone', id: 5 },
       { amount: '12.00', description: 'Party favors', payer: 'Laura', split: 'Everyone', id: 4 }
-    ]},
+      ]},
     { date: '2012-12-10', list: [
       { amount: '13.10', description: 'Drinks', payer: 'Kelly', split: 'Everyone', id: 3 },
       { amount: '10.50', description: 'Snacks', payer: 'Laura', split: 'Everyone', id: 2 },
       { amount: '70.00', description: 'Fruit', payer: 'Henry', split: 'Everyone', id: 1 }
-    ]}
-  ] }
+      ]}
+    ]
+  }
 ];
 // empty group
-var empty_group = { name: '', members: [], payments: [] };
-// summary
+var empty_group = { name: '', members: [], summary: [], payments: [] };
 
 /* routing */
 // groups level
@@ -87,21 +110,49 @@ app.get('/add-group', function(req, res){
     group: empty_group
   });
 });
-
 // within a group
 groups.forEach(function(groupObj){
   var name_linkified = groupObj.name.replace(/\s/g, '-').toLowerCase();
   // group home
   app.get('/'+name_linkified, function(req, res){
     res.render('group-home', {
-      payments: groupObj.payments,
       pageTitle: groupObj.name,
       group: groupObj,
+      payments: groupObj.payments,
+      summary: groupObj.summary,
       name_linkified: name_linkified,
       formatTime: formatTime
     });
   });
-  // edit payments
+  // individual summary for each member in a group
+  groupObj.summary.forEach(function(personObj){
+    var person_linkified = personObj.person.replace(/\s/g, '-').toLowerCase();
+    app.get('/'+name_linkified+'/user/'+person_linkified, function(req, res){
+      res.render('person-summary', {
+        pageTitle: personObj.person,
+        name_linkified: name_linkified,
+        person: personObj.person,
+        person_linkified: person_linkified,
+        paid: personObj.paid,
+        share: personObj.share,
+        balance: personObj.balance,
+        owes: personObj.owes,
+        is_owed: personObj.is_owed
+      });
+    })
+    app.get('/'+name_linkified+'/user/'+person_linkified+'/add', function(req, res){
+      res.render('edit-payment', {
+        pageTitle: 'New payment',
+        name_linkified: name_linkified,
+        date: '',
+        amount: '',
+        description: '',
+        payer: personObj.person,
+        split: 'Everyone'
+      });
+    })
+  })
+  // payments within group
   groupObj.payments.forEach(function(payment_by_date){
     var date = payment_by_date.date;
     payment_by_date.list.forEach(function(paymentObj){
@@ -129,8 +180,6 @@ groups.forEach(function(groupObj){
   app.get('/'+name_linkified+'/add', function(req, res){
     res.render('edit-payment', {
       pageTitle: 'New Payment',
-      group: groupObj,
-      payment: [],
       date: '',
       name_linkified: name_linkified,
       amount: '',

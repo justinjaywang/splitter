@@ -49,6 +49,7 @@ body {
   padding-bottom: 20px;
 }
 
+.list .list-divider,
 .list li#payments.list-divider,
 .list li#summary.list-divider {
   padding-top: 4px;
@@ -140,7 +141,7 @@ li#group {
   top: 50%;
   right: 36px;
   margin-top: -14px;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 28px;
   font-weight: bold;
 }
@@ -194,7 +195,8 @@ li#group {
 }
 .amounts .paid, 
 .amounts .should-pay,
-.amounts .net {
+.amounts .net,
+.amounts .owes {
 	/*vertical-align: middle;
 	 margin: 0 10px;
 	 display: inline-block;*/
@@ -214,18 +216,18 @@ li#group {
 .amounts .net:after {
   content: 'Balance';
 }
-#summary .paid {
-  left: 23%;
+#summary .paid,
+.summary.owes {
+  left: 22%;
 }
 #summary .should-pay {
-  left: 48%;
+  left: 47%;
 }
 #summary .net {
-  left: 73%;
+  left: 72%;
 }
-
 .amount {
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 28px;
 	color: #444;
 	font-weight: bold;
@@ -242,7 +244,7 @@ li#group {
   color: red;
 }
 .minus:before {
-  content: '-$';
+  content: '\2013$'; /* ndash */
 }
 
 #summary img {

@@ -547,7 +547,7 @@ a {
 /* List dividers
 -------------------------------------------------- */
 
-.list .list-divider, #summary .list-divider {
+.list .list-divider {
   position: relative;
   top: -1px;
   padding-top: 6px;

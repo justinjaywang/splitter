@@ -24,50 +24,25 @@
 <div class="content">
   <ul class="list">
     <!-- summary -->
-    <li id="summary" class="segmented-controller-item active list-divider">
-      Adam
-    </li>
-    <li id="summary" class="segmented-controller-item active amounts">
-		  <span class="summary person"><img src="http://placehold.it/76x76"></span>
-  		<span class="summary paid"><span class="summary amount">80.00</span><br></span>
-  		<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
-  		<span class="summary net"><span class="summary amount net-amount plus">30.00</span><br></span>
-    </li>
-    <li id="summary" class="segmented-controller-item active list-divider">
-      Becky
-    </li>
-    <li id="summary" class="segmented-controller-item active amounts">
-    	<span class="summary person"><img src="http://placehold.it/76x76"></span>
-  		<span class="summary paid"><span class="summary  amount">80.00</span><br></span>
-  		<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
-  		<span class="summary net"><span class="summary amount net-amount plus">30.00</span><br></span>
-    </li>
-    <li id="summary" class="segmented-controller-item active list-divider">
-      Cindy
-    </li>
-    <li id="summary" class="segmented-controller-item active amounts need-to-be-settled">
-			<span class="summary person"><img src="http://placehold.it/76x76"></span>
-			<span class="summary paid"><span class="summary  amount">20.00</span><br></span>
-			<span class="summary should-pay"><span class="summary amount">50.00</span><br></span>
-			<span class="summary net"><span class="summary amount net-amount minus">30.00</span><br></span>
-			<span class="chevron"></span>
-	  </li>
-	  <div class="slider" >
-  		<ul>
-  			<li class="detail">
-  					<a href="#">
-  					<span class="detail-arrow"><img src="http://placehold.it/200x60"></span>
-  					<span class="detail-amount">$50.00</span></span>
-  					<span class="detail-person"><img src="http://placehold.it/60x60"></span>
-  					<span class="chevron"></span>
-  			</li>
-  			<li class="detail"> 
-  				<a href="#" class="button email">Email</a>
-  				<a href="#" class="button text">Text</a>
-  				<a href="#" class="button-positive settle">Settled</a>
-  			</li>
-  		</ul>
-	  </div>
+    <% summary.forEach(function(personObj){ %>
+    <li id="summary" class="segmented-controller-item active list-divider"><%= personObj.person %></li>
+    <a href="/<%= name_linkified %>/user/<%= personObj.person.toLowerCase() %>" data-transition="slide-in">
+      <li id="summary" class="segmented-controller-item active amounts">
+        <span class="summary person"><img src="/images/<%= personObj.person.toLowerCase() + '.png' %>"></span>
+    		<span class="summary paid"><span class="summary amount"><%= personObj.paid %></span><br></span>
+    		<span class="summary should-pay"><span class="summary amount"><%= personObj.share %></span><br></span>
+    		<span class="summary net">
+    		  <% if (parseFloat(personObj.balance)<0) { neg_balance = parseFloat(-personObj.balance).toFixed(2)+''; %>
+    		  <span class="summary amount net-amount minus"><%= neg_balance %>
+    		  <% } else { %>
+    		  <span class="summary amount net-amount plus"><%= personObj.balance %>
+    		  <% } %>
+    		  </span><br>
+    		</span>
+    		<span class="chevron"></span>
+      </li>
+    </a>
+    <% }) %>
     <!-- payments -->
     <% payments.forEach(function(paymentObj){ %>
     <li id="payments" class="segmented-controller-item list-divider"><%= formatTime(paymentObj.date) %></li>

@@ -1,0 +1,36 @@
+<% include header.html %>
+
+<header class="bar-title">
+  <a class="button-prev" href="/<%= name_linkified %>" data-transition="slide-out">
+      Back
+    </a>
+  <h1 class="title"><%= pageTitle %></h1>
+  <a class="button" href="/<%= name_linkified %>/user/<%= person_linkified %>/add" data-transition="fade">
+      Add
+    </a>
+</header>
+
+<div class="content">
+  <ul class="list">
+    <% if (owes.length!=0) { %>
+    <li class="list-divider">Owes</li>
+    <% owes.forEach(function(owesObj){ %>
+    <li id="summary" class="amounts">
+      <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span>
+      <span class="summary owes"><span class="summary amount"><%= owesObj.amount %></span><br>to <%= owesObj.person %></span>
+    </li>
+    <% }) %>
+    <% } %>
+    <% if (is_owed.length!=0) { %>
+    <li class="list-divider">Is owed</li>
+    <% is_owed.forEach(function(is_owedObj){ %>
+    <li id="summary" class="amounts">
+      <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span>
+      <span class="summary owes"><span class="summary amount"><%= is_owedObj.amount %></span><br>by <%= is_owedObj.person %></span>
+    </li>
+    <% }) %>  
+    <% } %>
+  </ul>
+</div>
+
+<% include footer.html %>

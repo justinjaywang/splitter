@@ -20,11 +20,11 @@
     </li>
     <li class="list-divider">Group members</li>
     <% group.members.forEach(function(member){ %>
-      <li id="member">
-        <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
-        <span class="group member"><%= member %></span>
-        <!-- <span class="chevron"></span> -->
-      </li>
+    <li id="member">
+      <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
+      <span class="group member"><%= member %></span>
+      <!-- <span class="chevron"></span> -->
+    </li>
     <% }) %>
   </ul>
   <a class="button-block">Add member</a>
