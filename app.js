@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 app.use('/css/', express.static(__dirname + '/css'));
 app.use('/js/', express.static(__dirname + '/js'));
 app.use('/images/', express.static(__dirname + '/images'));
+app.use('/touch-icons/', express.static(__dirname + '/touch-icons'));
 
 /* functions */
 function formatTime(timeString) {
