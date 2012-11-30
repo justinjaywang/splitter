@@ -1,12 +1,14 @@
-var express = require('express')
-    , app = module.exports = express();
+var express = require('express');
 
-// using the .html extension instead of having to name the views as *.ejs
-app.engine('.html', require('ejs').__express);
+var app = exports.app = express.createServer();
+exports.port = process.env.PORT || 3600;
+
+// // using the .html extension instead of having to name the views as *.ejs
+// app.engine('.html', require('ejs').__express);
 // set folder where the pages are kept
 app.set('views', __dirname + '/views');
 // avoids having to provide the extension to res.render()
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 app.use('/css/', express.static(__dirname + '/css'));
 app.use('/js/', express.static(__dirname + '/js'));
@@ -192,6 +194,6 @@ groups.forEach(function(groupObj){
 })
 
 if (!module.parent) {
-  app.listen(8080);
-  console.log('EJS Demo server started on port 8080');
+  app.listen(exports.port);
+  console.log('EJS Demo server started on port ' + exports.port);
 }
