@@ -39,7 +39,7 @@ a li#payments {
 
 .list .payment.item {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 14px;
   padding-bottom: 6px;
   font-weight: bold;
 }
@@ -82,7 +82,7 @@ li#group {
 /*  height: 31px;*/
   margin: 0;
   color: inherit;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 ::-webkit-input-placeholder {
@@ -158,59 +158,121 @@ li#group {
 }
 
 /* summary */
-.list li.amounts {
+.list li.amounts,
+.list li.owes {
   padding: 0;
   height: 78px;
 }
-.summary.person img {
+.summary.person img,
+.owes img {
   position: absolute;
   top: 50%;
   left: 0;
-  height: 79px;
-  width: 79px;
-  margin-top: -2px;
+  height: 78px;
+  width: 78px;
+  margin-top: -1px;
 }
-.amounts .paid, 
-.amounts .should-pay,
-.amounts .net,
-.amounts .owes {
-	 position: absolute;
-	 top: 50%;
-	 margin-top: -25px;
-	 font-size: 14px;
-	 font-weight: 500;
-	 color: #959DA5;
+.summary.person-details {
+  position: absolute;
+  top: 50%;
+  left: 90px;
+  margin-top: -15px;
+  height: 30px;
 }
-.amounts .paid:after {
+.summary.person-details .person {
+  line-height: 14px;
+  padding-bottom: 6px;
+}
+.summary.person-details .paid-should-paid {
+  color: #959DA5;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.list .avatar-large {
+  padding: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.avatar-large img {
+  width: 100%;
+}
+
+.ind.summary.content {
+  height: 43px;
+}
+.ind.summary .paid, 
+.ind.summary .should-pay,
+.ind.summary .net {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #959DA5;
+}
+.ind.summary .owes {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+}
+.ind.summary .paid {
+  left: 0;
+  margin-left: 14px;
+}
+.ind.summary .should-pay {
+  left: 33%;
+  margin-left: 14px;
+}
+.ind.summary .net {
+  left: 66%;
+  margin-left: 14px;
+}
+.ind.summary .net .net-amount {
+  position: static;
+}
+.ind.summary .paid:after {
   content: 'Paid';
 }
-.amounts .should-pay:after {
+.ind.summary .should-pay:after {
   content: 'Share';
 }
-.amounts .net:after {
+.ind.summary .net:after {
   content: 'Balance';
 }
-#summary .paid,
-.summary.owes {
-  left: 23%;
+.ind.summary .amount {
+  font-size: 20px;
 }
-#summary .should-pay {
-  left: 47%;
-}
-#summary .net {
-  left: 71%;
-}
+
 .amount {
-	font-size: 20px;
+	font-size: 26px;
 	line-height: 28px;
 	color: #444;
 	font-weight: bold;
 }
-.amount:before {
+.list-divider.ind.summary {
+  top: -4px;
+}
+
+.amount:before,
+.owes .sentence:before {
   content: '$';
 }
-.amount.net-amount {
+.net-amount {
+  position: absolute;
+  top: 50%;
+  right: 36px;
+  margin-top: -14px;
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: bold;
 }
+.ind.summary.content {
+  margin-top: -4px;
+}
+.
 .plus {
   color: green;
 }
@@ -220,8 +282,19 @@ li#group {
 .minus:before {
   content: '\2013$'; /* ndash */
 }
+#summary a {
+  color: #444;
+}
+
+.owes .sentence {
+  position: absolute;
+  line-height: 18px;
+  top: 50%;
+  margin-top: -9px;
+  margin-left: 92px;
+}
 
 .button.remind, .button.settle {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
 }

@@ -12,23 +12,39 @@
 
 <div class="content">
   <ul class="list">
+    <li class="avatar-large">
+      <img src="/images/<%= person.toLowerCase() %>.png">
+    </li>
+    <li class="list-divider ind summary">Summary</li>
+    <li class="ind summary content">
+      <span class="paid"><span class="amount"><%= paid %></span><br></span>
+  		<span class="should-pay"><span class="amount"><%= share %></span><br></span>
+  		<span class="net">
+  		  <% if (parseFloat(balance)<0) { neg_balance = parseFloat(-balance).toFixed(2)+''; %>
+  		  <span class="amount net-amount minus"><%= neg_balance %>
+  		  <% } else { %>
+  		  <span class="amount net-amount plus"><%= balance %>
+  		  <% } %>
+  		  </span><br>
+  		</span>
+		</li>
     <% if (owes.length!=0) { %>
-    <li class="list-divider">Owes</li>
+    <li class="list-divider"><%= person %> owes</li>
     <% owes.forEach(function(owesObj){ %>
-    <li id="summary" class="amounts">
+    <li class="owes">
       <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span>
-      <span class="summary owes"><span class="summary amount"><%= owesObj.amount %></span><br>to <%= owesObj.person %></span>
-      <a class="button settle">Settle</a>
+      <span class="sentence"><%= owesObj.amount %> to <%= owesObj.person %></span>
+      <a class="button button-positive settle">Settle</a>
     </li>
     <% }) %>
     <% } %>
     <% if (is_owed.length!=0) { %>
-    <li class="list-divider">Is owed</li>
+    <li class="list-divider"><%= person %> is owed</li>
     <% is_owed.forEach(function(is_owedObj){ %>
-    <li id="summary" class="amounts">
+    <li class="owes">
       <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span>
-      <span class="summary owes"><span class="summary amount"><%= is_owedObj.amount %></span><br>by <%= is_owedObj.person %></span>
-      <a class="button remind">Remind</a>
+      <span class="sentence"><%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
+      <a class="button button-main remind">Remind</a>
     </li>
     <% }) %>  
     <% } %>
