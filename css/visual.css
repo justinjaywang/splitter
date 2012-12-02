@@ -240,6 +240,9 @@ input[type=search] {
   background-image: linear-gradient(to bottom, #9198A0 0, #9198A0 100%);
   border: 0px solid #b51a1a;
 }
+.button-main:active {
+  background-color: #787E85;
+}
 
 
 /* Move right-aligned list contents over 1 pixel */
