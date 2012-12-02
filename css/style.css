@@ -40,7 +40,7 @@ a li#payments {
 .list .payment.item {
   font-size: 16px;
   line-height: 14px;
-  padding-bottom: 6px;
+  padding-bottom: 2px;
   font-weight: bold;
 }
 
@@ -176,12 +176,12 @@ li#group {
   position: absolute;
   top: 50%;
   left: 90px;
-  margin-top: -15px;
+  margin-top: -14px;
   height: 30px;
 }
 .summary.person-details .person {
   line-height: 14px;
-  padding-bottom: 6px;
+  padding-bottom: 2px;
 }
 .summary.person-details .paid-should-paid {
   color: #959DA5;
@@ -201,14 +201,14 @@ li#group {
 }
 
 .ind.summary.content {
-  height: 43px;
+  height: 38px;
 }
 .ind.summary .paid, 
 .ind.summary .should-pay,
 .ind.summary .net {
   position: absolute;
   top: 50%;
-  margin-top: -25px;
+  margin-top: -18px;
   font-size: 14px;
   font-weight: 500;
   color: #959DA5;
@@ -216,7 +216,7 @@ li#group {
 .ind.summary .owes {
   position: absolute;
   top: 50%;
-  margin-top: -25px;
+  margin-top: -18px;
 }
 .ind.summary .paid {
   left: 0;
@@ -244,6 +244,7 @@ li#group {
 }
 .ind.summary .amount {
   font-size: 20px;
+  line-height: 12px;
 }
 
 .amount {
