@@ -361,3 +361,14 @@ a#summary-button, a#payments-button {
   padding-top: 5px;
   padding-bottom: 3px;
 }
+.button-remove {
+  padding: 8px 0 0px;
+  background: transparent;
+  color: #BFC5CB;
+}
+.button-remove:active {
+  padding-top: 9px;
+  padding-bottom: -1px;
+  background: transparent;
+  color: #9CA2A8;
+}
