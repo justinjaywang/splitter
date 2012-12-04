@@ -190,7 +190,6 @@ input[type=search] {
 /* Search bar */
 .bar-standard input[type=search] {
   background: #fff;
-  padding: 10px 4px 10px 0;
 }
 /* Move secondary header up 1 pixel */
 .bar-header-secondary {
