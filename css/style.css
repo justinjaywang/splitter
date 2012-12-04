@@ -113,7 +113,7 @@ li#group {
 .list .payment.price {
   position: absolute;
   top: 50%;
-  right: 36px;
+  right: 30px;
   margin-top: -14px;
   font-size: 26px;
   line-height: 28px;
@@ -268,7 +268,7 @@ li#group {
 .net-amount {
   position: absolute;
   top: 50%;
-  right: 36px;
+  right: 30px;
   margin-top: -14px;
   font-size: 26px;
   line-height: 28px;

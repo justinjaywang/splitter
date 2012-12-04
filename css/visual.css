@@ -275,7 +275,8 @@ input[type=search] {
 /* Base styles for both 1/2's of the chevron */
 .chevron:before,
 .chevron:after {
-  background-color: #959DA5;
+/*  background-color: #959DA5;*/
+  background-color: #BFC5CB;
 }
 
 /* Segmented controller */
