@@ -1,13 +1,13 @@
 <%- partial('header.ejs') %>
 
 <header class="bar-title">
-  <a class="button-prev" href="/<%= name_linkified %>" data-transition="slide-out">
-      <%= name %>
-    </a>
+  <a class="button button-clear" href="/<%= name_linkified %>" data-transition="slide-out">
+    <i class="icon-arrow-left icon-menu"></i><!--<%= name %>-->
+  </a>
   <h1 class="title"><%= pageTitle %></h1>
-  <a class="button" href="/<%= name_linkified %>/user/<%= person_linkified %>/add" data-transition="slide-in">
-      Add
-    </a>
+  <a class="button button-clear" href="/<%= name_linkified %>/user/<%= person_linkified %>/add" data-transition="slide-in">
+    <i class="icon-edit icon-menu"></i>
+  </a>
 </header>
 
 <div class="content">

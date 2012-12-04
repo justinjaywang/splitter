@@ -2,8 +2,8 @@
 
 <header class="bar-title">
   <h1 class="title">Groups</h1>
-  <a class="button" href="/add-group" data-transition="slide-in">
-    Add
+  <a class="button button-clear" href="/add-group" data-transition="slide-in">
+    <i class="icon-plus icon-menu"></i>
   </a>
 </header>
 
@@ -16,7 +16,7 @@
 <div class="content">
   <ul class="list">
     <% groups.forEach(function(groupObj){ %>
-    <li id="group">
+    <li id="group" class="click">
       <% var name_linkified = groupObj.name.replace(/\s/g, '-').toLowerCase(); %>
       <a href="/<%= name_linkified %>" data-transition="slide-in">
         <span class="group name"><%= groupObj.name %></span><span class="group number"><%= groupObj.members.length %></span>

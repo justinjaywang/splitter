@@ -1,13 +1,13 @@
 <%- partial('header.ejs') %>
 
 <header class="bar-title">
-  <a class="button-prev" href="/" data-transition="slide-out">
-      Groups
-    </a>
+  <a class="button button-clear" href="/" data-transition="slide-out">
+    <i class="icon-arrow-left icon-menu"></i>
+  </a>
   <h1 class="title"><%= pageTitle %></h1>
-  <a class="button" href="/<%= name_linkified %>/add" data-transition="slide-in">
-      Add
-    </a>
+  <a class="button button-clear" href="/<%= name_linkified %>/add" data-transition="slide-in">
+    <i class="icon-edit icon-menu"></i>
+  </a>
 </header>
 
 <nav class="bar-standard bar-header-secondary">
@@ -27,7 +27,7 @@
     <% summary.forEach(function(personObj){ %>
     <div id="summary" class="segmented-controller-item active">
       <a href="/<%= name_linkified %>/user/<%= personObj.person.toLowerCase() %>" data-transition="slide-in">
-        <li class="amounts">
+        <li class="amounts click">
           <span class="summary person"><img src="/images/<%= personObj.person.toLowerCase() + '.png' %>"></span>
       		<div class="summary person-details">
       		  <div class="person"><%= personObj.person %></div>
@@ -51,7 +51,7 @@
     <li id="payments" class="segmented-controller-item list-divider"><%= formatTime(paymentObj.date) %></li>
     <% paymentObj.list.forEach(function(payment){ %>
     <a href="/<%= name_linkified %>/payment/<%= payment.id %>" data-transition="slide-in">
-    <li id="payments" class=" payment segmented-controller-item">
+    <li id="payments" class="payment segmented-controller-item click">
       <div class="payment item"><%= payment.description %></div>
       <div class="payment person"><%= payment.payer %></div>
       <span class="payment price"><%= payment.amount %></span>
