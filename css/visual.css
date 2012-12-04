@@ -269,7 +269,7 @@ input[type=search] {
 .list [class*="button"],
 .list [class*="count"],
 .list .toggle {
-  right: 15px;
+  right: 12px;
 }
 
 /* Base styles for both 1/2's of the chevron */
@@ -370,4 +370,9 @@ a#summary-button, a#payments-button {
   padding-bottom: -1px;
   background: transparent;
   color: #9CA2A8;
+}
+
+/* Padding on settle button */
+.button.settle {
+  padding-left: 8px;
 }

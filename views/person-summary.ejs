@@ -6,7 +6,7 @@
   </a>
   <h1 class="title"><%= pageTitle %></h1>
   <a class="button button-clear" href="/<%= name_linkified %>/user/<%= person_linkified %>/add" data-transition="slide-in">
-    <i class="icon-edit icon-menu"></i>
+    <i class="icon-pencil icon-menu"></i>
   </a>
 </header>
 
@@ -33,7 +33,7 @@
     <li class="owes">
       <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span>
       <span class="sentence"><%= owesObj.amount %> to <%= owesObj.person %></span>
-      <a class="button button-main settle">Settle</a>
+      <a class="button button-main settle"><i class="icon-ok"></i> Settle</a>
     </li>
     <% }) %>
     <% } %>
