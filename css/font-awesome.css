@@ -53,9 +53,9 @@ a [class^="icon-"], a [class*=" icon-"] {
   line-height: 0.1em;
   vertical-align: baseline;
 }
-.icon-menu-ok:before {
-  font-size: 2em;
-  line-height: 0.2em;
+.icon-menu-remove:before {
+  font-size: 1.8em;
+  line-height: 0.13em;
   vertical-align: baseline;
 }
 .btn [class^="icon-"], .btn [class*=" icon-"] {
