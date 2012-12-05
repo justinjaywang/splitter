@@ -3,7 +3,7 @@
 */
 
 body {
-  color: #444;
+  color: #333;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -30,7 +30,7 @@ body {
 }
 
 a li#payments {
-  color: #444;
+  color: #333;
 }
 
 .list .payment.price:before {
@@ -157,7 +157,7 @@ li#group {
 }
 
 .segmented-controller li > a {
-  color: #444;
+  color: #333;
   font-size: 14px;
 }
 
@@ -254,7 +254,7 @@ li#group {
 .amount {
 	font-size: 26px;
 	line-height: 28px;
-	color: #444;
+	color: #333;
 	font-weight: bold;
 }
 .list-divider.ind.summary {
@@ -290,7 +290,7 @@ li#group {
   content: '\2013$'; /* ndash */
 }
 #summary a {
-  color: #444;
+  color: #333;
 }
 
 .owes .sentence {
