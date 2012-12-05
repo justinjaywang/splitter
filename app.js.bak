@@ -31,7 +31,7 @@ function formatTime(timeString) {
 /* data */
 // groups
 var groups = [
-  { name: 'Camping trip', members: ['Adam', 'Becky', 'Cindy', 'David'], email:['adam@splitter.com','becky@splitter.com','cindy@splitter.com','david@splitter.com'],
+  { name: 'Camping trip', members: ['Adam', 'Becky', 'Cindy', 'David'],
     summary: [ 
       { person: 'Adam', paid: '18.30', share: '85.37', balance: '-67.07', owes: [{ person: 'Cindy', amount: '67.07'}], is_owed: [] },
       { person: 'Becky', paid: '6.05', share: '85.37', balance: '-79.32', owes: [{ person: 'Cindy', amount: '79.32'}], is_owed: [] },
@@ -54,7 +54,7 @@ var groups = [
       ]}
     ] 
   },
-  { name: 'Roommates', members: ['Eddie', 'Fred', 'George'],email:['eddie@splitter.com','fred@splitter.com','george@splitter.com'],
+  { name: 'Roommates', members: ['Eddie', 'Fred', 'George'],
     summary: [ 
       { person: 'Eddie', paid: '80.00', share: '50.00', balance: '30.00', owes: [], is_owed: [{ person: 'Fred', amount: '30.00' }] },
       { person: 'Fred', paid: '10.00', share: '50.00', balance: '-40.00', owes: [{ person: 'Eddie', amount: '30.00'}, { person: 'George', amount: '10.00' }], is_owed: [] },
@@ -76,7 +76,7 @@ var groups = [
       ]}
     ]
   },
-  { name: 'Holiday party', members: ['Henry', 'Irene', 'Jack', 'Kelly', 'Laura'],email:['henry@splitter.com','irene@splitter.com','jack@splitter.com','kelly@splitter.com','laura@splitter.com'],
+  { name: 'Holiday party', members: ['Henry', 'Irene', 'Jack', 'Kelly', 'Laura'],
     summary: [ 
       { person: 'Henry', paid: '7.00', share: '10.52', balance: '-3.52', owes: [{ person: 'Laura', amount: '3.52'}], is_owed: [] },
       { person: 'Irene', paid: '10.00', share: '10.52', balance: '-0.52', owes: [{ person: 'Laura', amount: '0.52'}], is_owed: [] },
@@ -97,7 +97,6 @@ var groups = [
     ]
   }
 ];
-
 // empty group
 var empty_group = { name: '', members: [], summary: [], payments: [] };
 
