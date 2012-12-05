@@ -63,19 +63,4 @@
   </ul>
 </div>
 
-<script type="text/javascript">
-	$(document).load(function(){
-		$('.slider').hide();
-	});
-	$('#summary').live("click",function(){
-		$('.slider').hide();
-	});
-	$('.need-to-be-settled').live("click",function(){
-		$('.slider').show();
-	});
-	$('#payment-button').live("click",function(){
-		$('.slider').hide();
-	});
-</script>
-
 <%- partial('footer.ejs') %>
