@@ -19,6 +19,9 @@
       </form>
     </li>
     <li class="list-divider">Group members</li>
+    <% if (group.members.length == 0) { %>
+    <li class="empty-members">No members yet</li>
+    <% } %>
     <% group.members.forEach(function(member){ %>
     <li id="member">
       <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
@@ -28,10 +31,12 @@
     </li>
     <% }) %>
   </ul>
-  <a class="button-block">Add member</a>
-  <% if (pageTitle=='Edit Group') { %>
-  <a class="button-negative button-block">Delete group</a>
-  <% } %>
+  <div class="content-padded-custom">
+    <a class="button-block">Add member</a>
+    <% if (pageTitle=='Edit Group') { %>
+    <a class="button-negative button-block">Delete group</a>
+    <% } %>
+  </div>
 </div>
 
 <%- partial('footer.ejs') %>
