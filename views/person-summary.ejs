@@ -5,7 +5,7 @@
   </a>
   <h1 class="title"><%= pageTitle %></h1>
   <a class="button button-clear" href="/<%= name_linkified %>/user/<%= person_linkified %>/add" data-transition="slide-in">
-    <i class="icon-pencil icon-menu"></i>
+    <i class="icon-edit icon-menu"></i>
   </a>
 </header>
 
@@ -19,30 +19,29 @@
   		<span class="should-pay"><span class="amount"><%= share %></span><br></span>
   		<span class="net">
   		  <% if (parseFloat(balance)<0) { neg_balance = parseFloat(-balance).toFixed(2)+''; %>
-  		  <span class="amount net-amount minus"><%= neg_balance %>
+  		  <span class="amount net-amount minus"><%= neg_balance %></span><br>
   		  <% } else { %>
-  		  <span class="amount net-amount plus"><%= balance %>
+  		  <span class="amount net-amount plus"><%= balance %></span><br>
   		  <% } %>
-  		  </span><br>
   		</span>
 		</li>
 		
     <% if (owes.length!=0) { %>
-    <li class="list-divider"><%= person %> owes</li>
+    <li class="list-divider">Debts</li>
     <% owes.forEach(function(owesObj){ %>
     <li class="owes">
-      <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span>
-      <span class="sentence"><%= owesObj.amount %> to <%= owesObj.person %></span>
-      <a id="<%= owesObj.person%>" class="button button-main settle"><i class="icon-ok"></i>Settle</a>
+      <!-- <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span> -->
+      <span class="sentence">Owes <%= owesObj.amount %> to <%= owesObj.person %></span>
+      <a id="<%= owesObj.person%>" class="button button-main settle"><i class="icon-ok"></i> Settle</a>
     </li>
     <% }) %>
     <% } %>
     <% if (is_owed.length!=0) { %>
-    <li class="list-divider"><%= person %> is owed</li>
+    <li class="list-divider">Credits</li>
     <% is_owed.forEach(function(is_owedObj){ %>
     <li class="owes">
-      <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span>
-      <span class="sentence"><%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
+      <!-- <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span> -->
+      <span class="sentence">Is owed <%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
       <a id="<%=  is_owedObj.person%>" class="button button-main remind">Remind</a>
     </li>
     <% }) %>  
