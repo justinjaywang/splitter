@@ -1,17 +1,4 @@
 <%- partial('header.ejs') %>
-<script>
-	$('.remind').live('click',function(){
-		var msg ="Do you want to email "+$(this).attr("id") + "?";
-		console.log(msg);
-		new Messi(msg, {buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], modal:true});
-	});
-	$('.settle').live('click',function(){
-		var msg ="Already settled with "+$(this).attr("id") + "?";
-		console.log(msg);
-		new Messi(msg, {buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], modal:true});
-	});
-</script>
-
 <header class="bar-title">
   <a class="button button-clear" href="/<%= name_linkified %>" data-transition="slide-out">
     <i class="icon-arrow-left icon-menu"></i><!--<%= name %>-->
@@ -39,6 +26,7 @@
   		  </span><br>
   		</span>
 		</li>
+		
     <% if (owes.length!=0) { %>
     <li class="list-divider"><%= person %> owes</li>
     <% owes.forEach(function(owesObj){ %>
@@ -61,13 +49,15 @@
     <% } %>
   </ul>
 </div>
-<script>
+<script language="javascript" type="text/javascript">
 	$('.remind').live('click',function(){
 		var msg ="Do you want to email "+$(this).attr("id") + "?";
+		console.log(msg);
 		new Messi(msg, {buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], modal:true});
 	});
 	$('.settle').live('click',function(){
 		var msg ="Already settled with "+$(this).attr("id") + "?";
+		console.log(msg);
 		new Messi(msg, {buttons: [{id: 0, label: 'Yes', val: 'Y'}, {id: 1, label: 'No', val: 'N'}], modal:true});
 	});
 </script>
