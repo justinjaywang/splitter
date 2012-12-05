@@ -31,7 +31,7 @@
     <% owes.forEach(function(owesObj){ %>
     <li class="owes">
       <!-- <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span> -->
-      <span class="sentence">Owes <%= owesObj.amount %> to <%= owesObj.person %></span>
+      <span class="sentence">Owes $<%= owesObj.amount %> to <%= owesObj.person %></span>
       <a id="<%= owesObj.person%>" class="button button-main settle"><i class="icon-ok"></i> Settle</a>
     </li>
     <% }) %>
@@ -41,7 +41,7 @@
     <% is_owed.forEach(function(is_owedObj){ %>
     <li class="owes">
       <!-- <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span> -->
-      <span class="sentence">Is owed <%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
+      <span class="sentence">Is owed $<%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
       <a id="<%=  is_owedObj.person%>" class="button button-main remind">Remind</a>
     </li>
     <% }) %>  
