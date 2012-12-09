@@ -22,7 +22,7 @@
         <span class="group name"><%= groupObj.name %></span><span class="group number"><%= groupObj.members.length %></span>
         <div class="group members">
           <% groupObj.members.forEach(function(member){ %>
-            <img src="/images/<%= member.toLowerCase() %>.png">
+          <img src="/images/<%= member.toLowerCase() %>.png">
           <% }) %>
         </div>
         <a href="/<%= name_linkified %>/edit" class="group edit" data-transition="slide-in"></a>
