@@ -1,18 +1,18 @@
-<script type="text/javascript">
-  function toggleModal(){
-    $('.modalOpener').on('click', function() {
-      $('body').toggleClass('modalOpen');
-    });
-    $('.modalOpenerSettle').on('click', function() {
-      $('body').toggleClass('modalOpen');
-      var nameId = this.id;
-      $('.settle-paragraph').html('Settle up with '+nameId+'?')
-    });
-    $('.modalOpenerRemind').on('click', function() {
-      $('body').toggleClass('modalOpen');
-      var nameId = this.id;
-      $('.remind-paragraph').html('Send a reminder to '+nameId+'?')
-    });
-  }
-  window.addEventListener('push', toggleModal());
-</script>
+<!-- // <script type="text/javascript">
+//   function toggleModal(){
+//     $('.modalOpener').on('click', function() {
+//       $('body').toggleClass('modalOpen');
+//     });
+//     $('.modalOpenerSettle').on('click', function() {
+//       $('body').toggleClass('modalOpen');
+//       var nameId = this.id;
+//       $('.settle-paragraph').html('Settle up with '+nameId+'?')
+//     });
+//     $('.modalOpenerRemind').on('click', function() {
+//       $('body').toggleClass('modalOpen');
+//       var nameId = this.id;
+//       $('.remind-paragraph').html('Send a reminder to '+nameId+'?')
+//     });
+//   }
+//   window.addEventListener('push', toggleModal());
+// </script> -->

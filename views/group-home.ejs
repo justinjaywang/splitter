@@ -26,7 +26,7 @@
     <!-- summary -->
     <% summary.forEach(function(personObj){ %>
     <div id="summary" class="segmented-controller-item active">
-      <a href="/<%= name_linkified %>/user/<%= personObj.person.toLowerCase() %>" data-ignore="push">
+      <a href="/<%= name_linkified %>/user/<%= personObj.person.toLowerCase() %>" data-transition="slide-in">
         <li class="amounts click">
           <span class="summary person"><img src="/images/<%= personObj.person.toLowerCase() + '.png' %>"></span>
       		<div class="summary person-details">
@@ -50,7 +50,7 @@
     <% payments.forEach(function(paymentObj){ %>
     <li id="payments" class="segmented-controller-item list-divider"><%= formatTime(paymentObj.date) %></li>
     <% paymentObj.list.forEach(function(payment){ %>
-    <a href="/<%= name_linkified %>/payment/<%= payment.id %>" data-ignore="push">
+    <a href="/<%= name_linkified %>/payment/<%= payment.id %>" data-transition="slide-in">
     <li id="payments" class="payment segmented-controller-item click">
       <div class="payment item"><%= payment.description %></div>
       <div class="payment person"><%= payment.payer %></div>
