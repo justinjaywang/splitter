@@ -123,8 +123,8 @@ li#group {
 .list .group.edit {
   position: absolute;
   top: 0;
-  right: 16px;
-  padding: 16px 4px;
+  right: 0;
+  padding: 16px 20px 16px 12px;
   margin: 0 0 0;
   font-size: 14px;
   line-height: 18px;
@@ -167,6 +167,9 @@ li#group {
   padding: 0;
   height: 78px;
 }
+.list li.ind.summary.owes {
+  height: 75px;
+}
 .summary.person img,
 .owes img {
   position: absolute;
@@ -204,7 +207,7 @@ li#group {
   width: 100%;
 }
 
-.ind.summary.content {
+li.ind.summary {
   height: 37px;
 }
 .ind.summary .paid, 
@@ -276,7 +279,7 @@ li#group {
   line-height: 28px;
   font-weight: bold;
 }
-.ind.summary.content {
+.ind.summary {
   margin-top: -4px;
   border-top: 1px solid rgba(0, 0, 0, .1);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4);

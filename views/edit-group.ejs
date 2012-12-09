@@ -1,7 +1,7 @@
 <%- partial('header.ejs') %>
 
 <header class="bar-title">
-  <a class="button button-clear" href="/" data-transition="slide-out">
+  <a class="button button-clear" href="/" data-transition="fade">
     <i class="icon-remove icon-menu-remove"></i>
   </a>
   <h1 class="title"><%= pageTitle %></h1>
@@ -11,32 +11,45 @@
 </header>
 
 <div class="content">
-  <ul class="list">
-    <li class="list-divider">Group name</li>
-    <li class="add li">
-      <form>
-        <input type="text" class="add input" placeholder="Enter name of group" value="<%= group.name %>">
-      </form>
-    </li>
-    <li class="list-divider">Group members</li>
-    <% if (group.members.length == 0) { %>
-    <li class="empty-members">No members yet</li>
-    <% } %>
-    <% group.members.forEach(function(member){ %>
-    <li id="member">
-      <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
-      <span class="group member"><%= member %></span>
-      <a class="button button-remove"><i class="icon-remove-sign icon-large"></i></a>
-      <!-- <span class="chevron"></span> -->
-    </li>
-    <% }) %>
-  </ul>
-  <div class="content-padded-custom">
-    <a class="button-block">Add member</a>
-    <% if (pageTitle=='Edit Group') { %>
-    <a class="button-negative button-block">Delete group</a>
-    <% } %>
+  <div id="page-wrap">
+    <ul class="list">
+      <li class="list-divider">Group name</li>
+      <li class="add li">
+        <form>
+          <input type="text" class="add input" placeholder="Enter name of group" value="<%= group.name %>">
+        </form>
+      </li>
+      <li class="list-divider">Group members</li>
+      <% if (group.members.length == 0) { %>
+      <li class="empty-members">No members yet</li>
+      <% } %>
+      <% group.members.forEach(function(member){ %>
+      <li id="member">
+        <span class="avatar"><img src="/images/<%= member.toLowerCase() + '.png' %>"></span>
+        <span class="group member"><%= member %></span>
+        <a class="button button-remove"><i class="icon-remove-sign icon-large"></i></a>
+        <!-- <span class="chevron"></span> -->
+      </li>
+      <% }) %>
+    </ul>
+    <div class="content-padded-custom">
+      <% if (pageTitle!='Edit Group') { %>
+      <a class="button-positive button-block">Add member</a>
+      <% } else { %>
+      <a class="button button-block">Add member</a>
+      <a class="modalOpener button-negative button-block">Delete group</a>
+      <% } %>
+    </div>
+  </div>
+  
+  <div id="modal">
+    <div class="content-padded-custom content-modal">
+      <p>Are you sure you want to delete the group <em><%= group.name %></em>?</p>
+      <a class="button-negative button-block" href="/" data-ignore="push">Delete</a>
+      <a class="modalOpener button button-block">Cancel</a>
+    </div>
   </div>
 </div>
 
+<%- partial('modal.ejs') %>
 <%- partial('footer.ejs') %>

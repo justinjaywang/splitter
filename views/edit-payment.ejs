@@ -1,7 +1,7 @@
 <%- partial('header.ejs') %>
 
 <header class="bar-title">
-  <a class="button button-clear" href="/<%= name_linkified %>" data-transition="slide-out">
+  <a class="button button-clear" href="/<%= name_linkified %>" data=transition="fade">
     <i class="icon-remove icon-menu-remove"></i>
   </a>
   <h1 class="title"><%= pageTitle %></h1>
@@ -11,45 +11,57 @@
 </header>
 
 <div class="content">
-  <ul class="list">
-    <li class="list-divider">Date</li>
-    <li class="add li">
-      <form>
-        <% if (date=='') {%>
-        <input type="date" class="add input" placeholder="Select date" autofocus="autofocus">
-        <% } else { %>
-        <input type="date" class="add input" placeholder="Select date" value="<%= date %>">
-        <% } %>
-      </form>
-    </li>
-    <li class="list-divider">Amount</li>
-    <li class="add li">
-      <form>
-        <input type="number" class="add input" placeholder="Enter amount" value="<%= amount %>">
-      </form>
-    </li>
-    <li class="list-divider">Description</li>
-    <li class="add li">
-      <form>
-        <input type="text" class="add input" placeholder="Enter description" value="<%= description %>">
-      </form>
-    </li>
-    <li class="list-divider">Who paid</li>
-    <li>
-      <%= payer %>
-      <span class="chevron"></span>
-    </li>
-    <li class="list-divider">Split among</li>
-    <li>
-      <%= split %>
-      <span class="chevron"></span>
-    </li>
-  </ul>
-  <% if (pageTitle=='Edit Payment') { %>
-  <div class="content-padded-custom">
-    <a class="button-negative button-block">Delete payment</a>
+  <div id="page-wrap">
+    <ul class="list">
+      <li class="list-divider">Date</li>
+      <li class="add li">
+        <form>
+          <% if (date=='') {%>
+          <input type="date" class="add input" placeholder="Select date" autofocus="autofocus">
+          <% } else { %>
+          <input type="date" class="add input" placeholder="Select date" value="<%= date %>">
+          <% } %>
+        </form>
+      </li>
+      <li class="list-divider">Amount</li>
+      <li class="add li">
+        <form>
+          <input type="number" class="add input" placeholder="Enter amount" value="<%= amount %>">
+        </form>
+      </li>
+      <li class="list-divider">Description</li>
+      <li class="add li">
+        <form>
+          <input type="text" class="add input" placeholder="Enter description" value="<%= description %>">
+        </form>
+      </li>
+      <li class="list-divider">Who paid</li>
+      <li>
+        <%= payer %>
+        <span class="chevron"></span>
+      </li>
+      <li class="list-divider">Split among</li>
+      <li>
+        <%= split %>
+        <span class="chevron"></span>
+      </li>
+    </ul>
+    <% if (pageTitle=='Edit Payment') { %>
+    <div class="content-padded-custom">
+      <a class="modalOpener button-negative button-block">Delete payment</a>
+    </div>
+    <% } %>
   </div>
-  <% } %>
+  
+  <div id="modal">
+    <div class="content-padded-custom content-modal">
+      <p>Are you sure you want to delete the payment <em><%= description %></em>?</p>
+      <a class="button-negative button-block" href="/<%= name_linkified %>" data-ignore="push">Delete</a>
+      <a class="modalOpener button button-block">Cancel</a>
+    </div>
+  </div>
+  
 </div>
 
+<%- partial('modal.ejs') %>
 <%- partial('footer.ejs') %>
