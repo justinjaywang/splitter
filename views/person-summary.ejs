@@ -10,65 +10,43 @@
 </header>
 
 <div class="content">
-  <div id="page-wrap">
-    <ul class="list">
-      <li class="avatar-large">
-        <img src="/images/<%= person.toLowerCase() %>.png">
-      </li>
-      <li class="ind summary">
-        <span class="paid"><span class="amount"><%= paid %></span><br></span>
-    		<span class="should-pay"><span class="amount"><%= share %></span><br></span>
-    		<span class="net">
-    		  <% if (parseFloat(balance)<0) { neg_balance = parseFloat(-balance).toFixed(2)+''; %>
-    		  <span class="amount net-amount minus"><%= neg_balance %></span><br>
-    		  <% } else { %>
-    		  <span class="amount net-amount plus"><%= balance %></span><br>
-    		  <% } %>
-    		</span>
-  		</li>
-		
-      <% if (owes.length!=0) { %>
-      <li class="list-divider">Debts</li>
-      <% owes.forEach(function(owesObj){ %>
-      <li class="ind summary owes">
-        <!-- <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span> -->
-        <span class="sentence">Owes $<%= owesObj.amount %> to <%= owesObj.person %></span>
-        <a id="<%= owesObj.person%>" class="modalOpenerSettle button button-main settle">Settle</a>
-      </li>
-      <% }) %>
-      <% } %>
-      <% if (is_owed.length!=0) { %>
-      <li class="list-divider">Credits</li>
-      <% is_owed.forEach(function(is_owedObj){ %>
-      <li class="ind summary owes">
-        <!-- <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span> -->
-        <span class="sentence">Is owed $<%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
-        <a id="<%=  is_owedObj.person%>" class="modalOpenerRemind button button-main remind">Remind</a>
-      </li>
-      <% }) %>
-      <% } %>
-    </ul>
-  </div>
-  
-  <% if (owes.length!=0) { %>
-  <div id="modal">
-    <div class="content-padded-custom content-modal">
-      <p class="settle-paragraph"></p>
-      <a class="button-positive button-block" href="/<%= name_linkified %>/user/<%= person_linkified %>" data-ignore="push">Settle up</a>
-      <a class="modalOpener button button-block">Cancel</a>
-    </div>
-  </div>
-  <% } else { %>
-  <div id="modal">
-    <div class="content-padded-custom content-modal">
-      <p class="remind-paragraph"></p>
-      <a class="button-main button-block" href="/<%= name_linkified %>/user/<%= person_linkified %>" data-ignore="push">Send a text</a>
-      <a class="button-main button-block" href="/<%= name_linkified %>/user/<%= person_linkified %>" data-ignore="push">Send an email</a>
-      <a class="modalOpener button button-block">Cancel</a>
-    </div>
-  </div>
-  <% } %>
+  <ul class="list">
+    <li class="avatar-large">
+      <img src="/images/<%= person.toLowerCase() %>.png">
+    </li>
+    <li class="ind summary">
+      <span class="paid"><span class="amount"><%= paid %></span><br></span>
+  		<span class="should-pay"><span class="amount"><%= share %></span><br></span>
+  		<span class="net">
+  		  <% if (parseFloat(balance)<0) { neg_balance = parseFloat(-balance).toFixed(2)+''; %>
+  		  <span class="amount net-amount minus"><%= neg_balance %></span><br>
+  		  <% } else { %>
+  		  <span class="amount net-amount plus"><%= balance %></span><br>
+  		  <% } %>
+  		</span>
+		</li>
+	
+    <% if (owes.length!=0) { %>
+    <li class="list-divider">Debts</li>
+    <% owes.forEach(function(owesObj){ %>
+    <li class="ind summary owes">
+      <!-- <span class="summary person"><img src="/images/<%= owesObj.person.toLowerCase() %>.png"></span> -->
+      <span class="sentence">Owes $<%= owesObj.amount %> to <%= owesObj.person %></span>
+      <a id="<%= owesObj.person%>" class="button button-main settle">Settle</a>
+    </li>
+    <% }) %>
+    <% } %>
+    <% if (is_owed.length!=0) { %>
+    <li class="list-divider">Credits</li>
+    <% is_owed.forEach(function(is_owedObj){ %>
+    <li class="ind summary owes">
+      <!-- <span class="summary person"><img src="/images/<%= is_owedObj.person.toLowerCase() %>.png"></span> -->
+      <span class="sentence">Is owed $<%= is_owedObj.amount %> by <%= is_owedObj.person %></span>
+      <a id="<%=  is_owedObj.person%>" class="button button-main remind">Remind</a>
+    </li>
+    <% }) %>
+    <% } %>
+  </ul>
 </div>
 
-<%- partial('modal.ejs') %>
 <%- partial('footer.ejs') %>
