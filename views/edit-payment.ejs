@@ -53,13 +53,15 @@
     <% } %>
   </div>
   
+  <% if (pageTitle=='Edit Payment') { %>
   <div id="modal">
     <div class="content-padded-custom content-modal">
       <p>Are you sure you want to delete the payment <em><%= description %></em>?</p>
-      <a class="button-negative button-block" href="/<%= name_linkified %>" data-ignore="push">Delete</a>
+      <a class="button-negative button-block" href="/<%= name_linkified %>" data-transition="fade">Delete</a>
       <a class="modalOpener button button-block">Cancel</a>
     </div>
   </div>
+  <% } %>
   
 </div>
 
