@@ -383,10 +383,8 @@ a#summary-button, a#payments-button {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4);
 }
-/*.content-modal {
-  background: #CFD5DA;
+.content-modal {
   background: #EAEDF0;
-  color: #fff;
   color: #959DA5;
   font-size: 16px;
   line-height: 20px;
@@ -396,10 +394,10 @@ a#summary-button, a#payments-button {
 }
 .content-modal p {
   padding: 0 10px 20px;
-}*/
+}
 
 /* modal */
-/*#modal {
+#modal {
   position: fixed;
   width: 100%;
   bottom: -228px;
@@ -420,12 +418,13 @@ a#summary-button, a#payments-button {
 .modalOpen,
 .modalOpen .content {
   background: #000;
+  pointer-events: none;
 }
 .modalOpen #modal {
   pointer-events: auto;
   -webkit-transform: translateY(-228px);
           transform: translateY(-228px);
-}*/
+}
 
 /* empty members */
 .list .empty-members {
