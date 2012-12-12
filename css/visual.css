@@ -400,31 +400,36 @@ a#summary-button, a#payments-button {
 #modal {
   position: fixed;
   width: 100%;
-  bottom: -228px;
+  bottom: 0px; /*-228px;*/
   left: 50%;
   margin: 0 0 0 -50%;
-  pointer-events: none;
+
   -webkit-transition: -webkit-transform .08s ease-in-out;
           transition:         transform .08s ease-in-out;
 }
-.modalOpen header,
-.modalOpen #page-wrap {
+.modalOpen  header, .modalOpen .content{
   opacity: 0.3;
   filter: alpha(opacity=30);
   pointer-events: none;
   -webkit-transition: opacity .08s ease-in-out;
           transition: opacity .08s ease-in-out;
 }
-.modalOpen,
-.modalOpen .content {
-  background: #000;
-  pointer-events: none;
-}
-.modalOpen #modal {
-  pointer-events: auto;
-  -webkit-transform: translateY(-228px);
-          transform: translateY(-228px);
-}
+
+/*.modalOpen header,
+/*.modalOpen #page-wrap {
+/*  opacity: 0.3;
+/*  filter: alpha(opacity=30);
+/*  pointer-events: none;
+/*  -webkit-transition: opacity .08s ease-in-out;
+/*          transition: opacity .08s ease-in-out;
+/*}
+/*.modalOpen,
+/*.modalOpen .content {
+/*  background: #000;
+/*  pointer-events: none;
+/*}
+*/
+
 
 /* empty members */
 .list .empty-members {

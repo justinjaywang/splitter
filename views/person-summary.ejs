@@ -25,7 +25,7 @@
   		  <% } %>
   		</span>
 		</li>
-	
+<div id="modal-hide">	
     <% if (owes.length!=0) { %>
     <li class="list-divider">Debts</li>
     <% owes.forEach(function(owesObj){ %>
@@ -46,7 +46,9 @@
     </li>
     <% }) %>
     <% } %>
-  </ul>
 </div>
+</div>
+<div id="modal"></div>
+</ul>
 
 <%- partial('footer.ejs') %>
