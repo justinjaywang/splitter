@@ -31,13 +31,15 @@
     </li>
     <% }) %>
   </ul>
+  <div id="modal-hide">
   <div class="content-padded-custom">
     <% if (pageTitle!='Edit Group') { %>
     <a class="button-positive button-block">Add member</a>
     <% } else { %>
     <a class="button button-block">Add member</a>
-    <a class="modalOpener button-negative button-block">Delete group</a>
+    <a id= "<%= group.name %>"class="button-negative button-block delete">Delete group</a>
     <% } %>
+  </div>
   </div>
 </div>
 

@@ -45,12 +45,14 @@
       <span class="chevron"></span>
     </li>
   </ul>
+  <div id="modal-hide">
   <% if (pageTitle=='Edit Payment') { %>
   <div class="content-padded-custom">
-    <a class="button-negative button-block">Delete payment</a>
+    <a class="button-negative button-block delete-payment">Delete payment</a>
   </div>
   <% } %>
   
+</div>
 </div>
 
 <%- partial('footer.ejs') %>

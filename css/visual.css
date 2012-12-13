@@ -395,7 +395,16 @@ a#summary-button, a#payments-button {
 .content-modal p {
   padding: 0 10px 20px;
 }
-
+.modalOpen {
+ background:#000;
+}
+.modalOpen  header, .modalOpen .content {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  pointer-events: none;
+  -webkit-transition: opacity .08s ease-in-out;
+          transition: opacity .08s ease-in-out;
+}
 /* modal */
 #modal {
   position: fixed;
@@ -407,13 +416,7 @@ a#summary-button, a#payments-button {
   -webkit-transition: -webkit-transform .08s ease-in-out;
           transition:         transform .08s ease-in-out;
 }
-.modalOpen  header, .modalOpen .content{
-  opacity: 0.3;
-  filter: alpha(opacity=30);
-  pointer-events: none;
-  -webkit-transition: opacity .08s ease-in-out;
-          transition: opacity .08s ease-in-out;
-}
+
 
 /*.modalOpen header,
 /*.modalOpen #page-wrap {
